@@ -3,7 +3,10 @@ import pandas
 import requests
 import snowflake.connector
 
-
+streamlit.text("Hello from Snowflake:")
+my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+my_cur = my_cnx.cursor()
+my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 
 streamlit.title('My Parents New Healthy Diner')
 
