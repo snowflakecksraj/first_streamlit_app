@@ -35,7 +35,7 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon"
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
 
-my_cur.execute("select * from fruit_load_list")
+my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.text("The fruit load list contains:")
 steamlit.dataframe(my_data_rows)
